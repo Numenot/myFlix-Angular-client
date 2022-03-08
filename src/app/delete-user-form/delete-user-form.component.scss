@@ -1,0 +1,8 @@
+@media only screen and (max-width: 480px) {
+  .mat-dialog-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+}

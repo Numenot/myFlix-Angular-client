@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Delete my account</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    Are you certain you wish to delete your account? This action is permanent.
+  </mat-card-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="deleteUser()">Delete my account</button>
+    <button mat-raised-button (click)="cancel()" type="button">Cancel</button>
+  </mat-dialog-actions>
+</mat-card>

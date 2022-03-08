@@ -1,0 +1,54 @@
+<!-- Toolbar  at the top -->
+<app-navigation-bar></app-navigation-bar>
+
+<!-- Section with current user details -->
+<h1 style="text-align: center; margin-top: 2rem;">My profile:</h1>
+<div class="user-profile-section">
+  <mat-card class="content-container" style="flex: 1 1 auto; max-width: 250px">
+    <mat-card-content>
+      <mat-icon color="primary">person</mat-icon>
+      <span id="profile-title">Username: </span>{{ user.Username }}
+    </mat-card-content>
+    <mat-card-content>
+      <mat-icon color="primary">lock</mat-icon>
+      <span id="profile-title">Password: </span>*******
+    </mat-card-content>
+    <mat-card-content>
+      <mat-icon color="primary">email </mat-icon>
+      <span id="profile-title">Email: </span>{{ user.Email }}
+    </mat-card-content>
+    <mat-card-content>
+      <mat-icon color="primary">cake</mat-icon>
+      <span id="profile-title">Birthday: </span>{{ user.Birthday | date }}
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- Button to open a dialog form to edit user details -->
+      <button mat-raised-button color="primary" (click)="openProfileFormDialog()">
+        Edit Profile
+      </button>
+      <!-- Button to open a dialog to delete the account -->
+      <button mat-raised-button color="warn" (click)="openDeleteUserFormDialog()">
+        Delete Account
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- Section to display list offavorite movies -->
+<div class="favorite-section">
+  <h1 style="text-align: center;">My favorites:</h1>
+  <div class="card-list">
+    <mat-card class="card-body" *ngFor="let favorite of FavoriteMovies" style="flex: 1 1 auto; max-width: 250px">
+      <mat-card-header>
+        <mat-card-title>{{favorite.Title}}</mat-card-title>
+        <mat-card-subtitle>Directed by: {{favorite.Director.Name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{favorite.ImagePath}} alt={{favorite.Title}} style="width: 200px; max-height: 300px" />
+      <mat-card-footer>
+        <button mat-stroked-button color="primary" (click)="removeFavoriteMovie(favorite._id)">
+          Remove from favorites
+        </button>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

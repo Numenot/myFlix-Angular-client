@@ -1,0 +1,24 @@
+body{
+    margin: 0%;
+}
+
+.mat-toolbar{
+height: 3em;
+}
+
+div {
+  overflow: inherit;
+}
+
+a{
+  text-decoration: none;
+  white-space: normal;
+}
+
+button{
+  min-width: min-content;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
