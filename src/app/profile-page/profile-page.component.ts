@@ -19,13 +19,20 @@ export class ProfilePageComponent implements OnInit {
   constructor(public fetchApiData: UserRegistrationService, public snackBar: MatSnackBar, public dialog: MatDialog, public router: Router
   ) { }
 
-  // Get user details and current user favorite movies on init
+  /** 
+   * Get user details and current user favorite movies on init
+   */
   ngOnInit(): void {
     this.getFavoriteMovies();
     this.getUser();
   }
 
-  // get user details
+  /**
+   * Get user details
+   * @function getUser
+   * @param user
+   * @returns User data in json format
+   */
   getUser(): void {
     const user = localStorage.getItem('user');
     if (user) {
@@ -36,7 +43,12 @@ export class ProfilePageComponent implements OnInit {
     }
   }
 
-  // get current user's favorite movie list
+  /**
+   * get current user's favorite movie list
+   * @function getUser
+   * @param user
+   * @returns array of user's favorite movies in json format
+   */
   getFavoriteMovies(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
@@ -45,7 +57,12 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
-  // remove movie from favoirte list
+  /**
+   * remove movie from favoirte list
+   * @function deleteFavorites
+   * @param MovieId {string}
+   * @returns User details in json format via ngOnInit function
+   */
   removeFavoriteMovie(MovieId: string): void {
     this.fetchApiData.deleteFavorites(MovieId).subscribe((resp: any) => {
       this.snackBar.open(
@@ -59,14 +76,20 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
-  // function to open the profile form dialog to  edit user details
+  /**
+   * function to open the profile form dialog to  edit user details
+   * @module ProfileFormComponent
+   */
   openProfileFormDialog(): void {
     this.dialog.open(ProfileFormComponent, {
       width: '350px'
     });
   }
 
-  // function to open the delete profile dialog
+  /**
+   * function to open the delete profile dialog
+   * @module DeleteUserFormComponent
+   */
   openDeleteUserFormDialog(): void {
     this.dialog.open(DeleteUserFormComponent, {
       width: '350px'

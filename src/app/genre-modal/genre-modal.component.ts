@@ -17,7 +17,10 @@ export class GenreModalComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  //cancel function to close dialog
+  /**
+   * cancel function to close dialog
+   * @function close
+   */
   cancel(): void {
     this.dialogRef.close();
   }

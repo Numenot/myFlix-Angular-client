@@ -23,7 +23,12 @@ export class DeleteUserFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //Upon deletion, user will be removed, local  storage cleared and the user will be brought back to welcome page  
+  /**
+   * Delete current user
+   * @function deleteUser
+   * @param this.Usernamee {any}
+   * @returns user will be removed, local  storage cleared and the user will be brought back to welcome page
+   */
   deleteUser(): void {
     this.fetchApiData.deleteUser(this.Username).subscribe(() => {
       this.snackBar.open('Your account was deleted successfully', 'x', {
@@ -35,7 +40,10 @@ export class DeleteUserFormComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  //cancel function to close dialog
+  /**
+   * cancel function to close dialog
+   * @function close
+   */
   cancel(): void {
     this.dialogRef.close();
   }

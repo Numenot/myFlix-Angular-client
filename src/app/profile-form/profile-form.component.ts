@@ -22,11 +22,19 @@ export class ProfileFormComponent implements OnInit {
     public snackBar: MatSnackBar
   ) { }
 
-  //get user details on init
+  /**
+   * Get user details on init
+   */
   ngOnInit(): void {
   }
 
-  //edit user details and display green snackbar to confirm
+  /**
+   * edit user details and 
+   * @function editUser
+   * @param this.Username {any}
+   * @param this.userData {any}
+   * @returns Updated user details, display green snackbar to confirm, and asks user to login using new details
+   */
   editUser(): void {
     this.fetchApiData.editUser(this.Username, this.userData).subscribe((resp) => {
       console.log(resp);
@@ -44,7 +52,10 @@ export class ProfileFormComponent implements OnInit {
     });
   }
 
-  //cancel function to close dialog
+  /**
+   * cancel function to close dialog
+   * @function close
+   */
   cancel(): void {
     this.dialogRef.close();
   }
