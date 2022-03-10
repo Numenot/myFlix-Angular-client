@@ -1,6 +1,6 @@
 # MyFlixAngularClient
-Client-side for an application called myFlix, created using ANgular, based on
-its existing server-side code (REST API and database)
+- Client-side for an application called myFlix, created using ANgular, based on its existing server-side code (REST API and database)
+- Live site: https://numenot.github.io/myFlix-Angular-client/
 
 # User stories
 - As a user, I want to be able to receive information on movies, directors, and genres so that I
@@ -34,4 +34,15 @@ particular genre of the movie will be displayed.
 
 # Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+# Screenshots
+
+## Desktop:
+
+![Screenshot](./img/myFlix-Angular.png)
+
+## Mobile:
+
+![Screenshot](./img/myFlix-Angular-mobile.png)
+
 
